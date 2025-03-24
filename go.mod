@@ -1,4 +1,4 @@
-module terraform-provider-tir
+module github.com/e2eterraformprovider/terraform-provider-tir
 
 go 1.23.5
 

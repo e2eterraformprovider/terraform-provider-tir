@@ -3,7 +3,8 @@ package notebook
 import (
 	"context"
 	"log"
-	"terraform-provider-tir/client"
+
+	"github.com/e2eterraformprovider/terraform-provider-tir/client"
 
 	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"

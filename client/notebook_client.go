@@ -7,7 +7,7 @@ import (
 	"io"
 	"log"
 	"net/http"
-	"terraform-provider-tir/models"
+	"github.com/e2eterraformprovider/terraform-provider-tir/models"
 )
 
 type Client struct {

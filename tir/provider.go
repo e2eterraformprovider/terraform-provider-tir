@@ -1,14 +1,13 @@
 package e2e
 
 import (
-	"terraform-provider-tir/client"
-	"terraform-provider-tir/tir/integration"
-	"terraform-provider-tir/tir/dataset"
-	"terraform-provider-tir/tir/modelEndpoint"
-	"terraform-provider-tir/tir/modelRepo"
-	"terraform-provider-tir/tir/notebook"
-	"terraform-provider-tir/tir/privateCluster"
-
+	"github.com/e2eterraformprovider/terraform-provider-tir/client"
+	"github.com/e2eterraformprovider/terraform-provider-tir/tir/dataset"
+	"github.com/e2eterraformprovider/terraform-provider-tir/tir/integration"
+	"github.com/e2eterraformprovider/terraform-provider-tir/tir/modelEndpoint"
+	"github.com/e2eterraformprovider/terraform-provider-tir/tir/modelRepo"
+	"github.com/e2eterraformprovider/terraform-provider-tir/tir/notebook"
+	"github.com/e2eterraformprovider/terraform-provider-tir/tir/privateCluster"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 )
 
@@ -18,9 +17,9 @@ func Provider() *schema.Provider {
 		Schema: map[string]*schema.Schema{
 			"api_endpoint": {
 				Type:        schema.TypeString,
-				Optional: true,
+				Optional:    true,
 				Description: "Endpoint of e2e tir platform",
-				Default: "https://api.e2enetworks.com/myaccount/api/v1/gpu",
+				Default:     "https://api.e2enetworks.com/myaccount/api/v1/gpu",
 			},
 			"auth_token": {
 				Type:        schema.TypeString,
@@ -41,7 +40,7 @@ func Provider() *schema.Provider {
 			"tir_modelRepository": modelRepo.ResourceModelRepo(),
 			"tir_modelEndpoint":   modelEndpoint.ResourceModel(),
 			"tir_integration":     integration.ResourceModelRepo(),
-			"tir_privateCluster" : privateCluster.ResourcePrivateCluster(),
+			"tir_privateCluster":  privateCluster.ResourcePrivateCluster(),
 		},
 		DataSourcesMap: map[string]*schema.Resource{
 			"tir_notebook":       notebook.DataSourceImages(),

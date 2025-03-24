@@ -8,8 +8,7 @@ import (
 	"log"
 	"net/http"
 	"strconv"
-	"terraform-provider-tir/models"
-
+	"github.com/e2eterraformprovider/terraform-provider-tir/models"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 )
 

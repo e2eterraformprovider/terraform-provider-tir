@@ -7,7 +7,7 @@ import (
 	"io"
 	"log"
 	"net/http"
-	"terraform-provider-tir/models"
+	"github.com/e2eterraformprovider/terraform-provider-tir/models"
 )
 
 func (c *Client) NewDataset(item *models.Dataset, projectID string, teamID string, activeIAM string) (map[string]interface{}, error) {

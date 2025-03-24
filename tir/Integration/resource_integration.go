@@ -6,8 +6,8 @@ import (
 	"math"
 	"strconv"
 	"strings"
-	"terraform-provider-tir/client"
-	"terraform-provider-tir/models"
+	"github.com/e2eterraformprovider/terraform-provider-tir/client"
+	"github.com/e2eterraformprovider/terraform-provider-tir/models"
 
 	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"

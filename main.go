@@ -2,8 +2,7 @@ package main
 
 import (
 	"log"
-	"terraform-provider-tir/tir"
-
+	"github.com/e2eterraformprovider/terraform-provider-tir/tir"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/plugin"
 )
