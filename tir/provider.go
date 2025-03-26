@@ -3,7 +3,7 @@ package e2e
 import (
 	"github.com/e2eterraformprovider/terraform-provider-tir/client"
 	"github.com/e2eterraformprovider/terraform-provider-tir/tir/dataset"
-	"github.com/e2eterraformprovider/terraform-provider-tir/tir/integration"
+	"github.com/e2eterraformprovider/terraform-provider-tir/tir/Integration"
 	"github.com/e2eterraformprovider/terraform-provider-tir/tir/modelEndpoint"
 	"github.com/e2eterraformprovider/terraform-provider-tir/tir/modelRepo"
 	"github.com/e2eterraformprovider/terraform-provider-tir/tir/notebook"
