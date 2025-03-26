@@ -29,7 +29,7 @@ func DataSourceImages() *schema.Resource {
 				Computed: true,
 			},
 			"active_iam": {
-				Type:     schema.TypeInt,
+				Type:     schema.TypeString,
 				Required: true,
 			},
 			"category": {
