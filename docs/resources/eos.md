@@ -19,7 +19,7 @@ resource "tir_eos" <name:string> {
     name = <name:string>
     disk_size = 100
     storage_type = <storage_type:string>
-    pvc_type = "custom_pvc"
+    pvc_type = "custom_pvc" // for disk this must be custom_pvc
     team_id = <team_id : string>
     project_id = <project_id:string>
     active_iam = <active_iam:string>

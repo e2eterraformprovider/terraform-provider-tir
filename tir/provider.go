@@ -35,15 +35,15 @@ func Provider() *schema.Provider {
 			},
 		},
 		ResourcesMap: map[string]*schema.Resource{
-			"tir_notebook":        notebook.ResourceNode(),
+			"tir_node":        notebook.ResourceNode(),
 			"tir_eos":             dataset.ResourceEOS(),
-			"tir_modelRepository": modelRepo.ResourceModelRepo(),
-			"tir_modelEndpoint":   modelEndpoint.ResourceModel(),
+			"tir_model_repository": modelRepo.ResourceModelRepo(),
+			"tir_model_endpoint":   modelEndpoint.ResourceModel(),
 			"tir_integration":     integration.ResourceModelRepo(),
-			"tir_privateCluster":  privateCluster.ResourcePrivateCluster(),
+			"tir_private_cluster":  privateCluster.ResourcePrivateCluster(),
 		},
 		DataSourcesMap: map[string]*schema.Resource{
-			"tir_notebook":       notebook.DataSourceImages(),
+			"tir_notebook_images":       notebook.DataSourceImages(),
 			"tir_notebook_plans": notebook.DataSourceSKUPlans(),
 		},
 		ConfigureFunc: providerConfigure, // setup the API Client
