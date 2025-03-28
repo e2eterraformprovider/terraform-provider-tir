@@ -275,3 +275,233 @@ Optional:
 - `key` (String) The key for the environment variable.
 - `required` (Boolean) Indicates whether the environment variable is required.
 - `value` (String) The value for the environment variable.
+
+
+## Supported Frameworks
+
+  - TRITON = 'triton'
+  - PYTORCH = 'pytorch' 
+  - LLAMA = 'llma'
+  - CODELAMA = 'codellama'
+  - STABLE_DIFFUSION = 'stable_diffusion'
+  - STABLE_DIFFUSION_XL = 'stable_diffusion_xl'
+  - MPT = 'mpt'
+  - CUSTOM = 'custom'
+  - MIXTRAL8X7B = 'mixtral-8x7b-instruct'
+  - MIXTRAL7B = 'mistral-7b-instruct'
+  - TENSOR_RT = 'tensorrt'
+  - FINETUNED = 'finetuned'
+  - GEMMA_2B = 'gemma-2b'
+  - GEMMA_2B_IT = 'gemma-2b-it'
+  - GEMMA_7B = 'gemma-7b'
+  - GEMMA_7B_IT = 'gemma-7b-it'
+  - LLAMA_3 = 'llama-3-8b-instruct'
+  - LLAMA_3_1 = 'llama-3_1-8b-instruct'
+  - LLAMA_3_2 = 'llama-3_2-3b-instruct'
+  - LLAMA_3_2_VISION = 'llama-3_2-11b-vision-instruct'
+  - VLLM = 'vllm'
+  - STARCODER = 'starcoder2-7b'
+  - PHI_3_MINI = 'Phi-3-mini-128k-instruct'
+  - NEMO = 'nemo-rag'
+  - STABLE_VIDEO_DIFFUSION = 'stable-video-diffusion-img2vid-xt'
+  - YOLO_V8 = 'yolov8'
+  - NEMOTRON = 'nemotron-3-8b-chat-4k-rlhf'
+  - NV_EMBED = 'nvidia-nv-embed-v1'
+  - BAAI_LARGE = 'bge-large-en-v1_5'
+  - BAAI_RERANKER = 'bge-reranker-large'
+  - PIXTRAL = 'pixtral-12b-2409'
+
+
+## Supported Models for SGLANG
+
+- `deepseek-ai/DeepSeek-R1`
+- `google/gemma-2b`
+- `deepseek-ai/DeepSeek-V3`
+- `meta-llama/Llama-3.2-1B`
+- `microsoft/Phi-3-small-8k-instruct`
+- `meta-llama/Llama-3.2-1B-Instruct`
+- `custom`
+
+## Supported Models for VLLM
+- `custom`
+- `BAAI/Aquila-7B`
+- `BAAI/AquilaChat-7B`
+- `Snowflake/snowflake-arctic-base`
+- `Snowflake/snowflake-arctic-instruct`
+- `baichuan-inc/Baichuan-7B`
+- `baichuan-inc/Baichuan2-13B-Chat`
+- `bigscience/bloom`
+- `bigscience/bloomz`
+- `THUDM/chatglm2-6b`
+- `THUDM/chatglm3-6b`
+- `CohereForAI/c4ai-command-r-v01`
+- `databricks/dbrx-base`
+- `databricks/dbrx-instruct`
+- `Deci/DeciLM-7B`
+- `Deci/DeciLM-7B-instruct`
+- `tiiuae/falcon-7b`
+- `tiiuae/falcon-40b`
+- `tiiuae/falcon-rw-7b`
+- `google/gemma-2b`
+- `google/gemma-7b`
+- `gpt2`
+- `gpt2-xl`
+- `bigcode/starcoder`
+- `bigcode/gpt_bigcode-santacoder`
+- `WizardLM/WizardCoder-15B-V1.0`
+- `EleutherAI/gpt-j-6b`
+- `nomic-ai/gpt4all-j`
+- `EleutherAI/gpt-neox-20b`
+- `EleutherAI/pythia-12b`
+- `OpenAssistant/oasst-sft-4-pythia-12b-epoch-3.5`
+- `databricks/dolly-v2-12b`
+- `stabilityai/stablelm-tuned-alpha-7b`
+- `internlm/internlm-7b`
+- `internlm/internlm-chat-7b`
+- `internlm/internlm2-7b`
+- `internlm/internlm2-chat-7b`
+- `core42/jais-13b`
+- `core42/jais-13b-chat`
+- `core42/jais-30b-v3`
+- `core42/jais-30b-chat-v3`
+- `openlm-research/open_llama_13b`
+- `meta-llama/Llama-2-13b-hf`
+- `meta-llama/Llama-2-70b-hf`
+- `meta-llama/Meta-Llama-3-8B-Instruct`
+- `meta-llama/Meta-Llama-3-70B-Instruct`
+- `meta-llama/Meta-Llama-3.1-8B-Instruct`
+- `meta-llama/Meta-Llama-3.1-70B-Instruct`
+- `meta-llama/Meta-Llama-3.1-405B-Instruct`
+- `meta-llama/Meta-Llama-3.1-405B-Instruct-FP8`
+- `meta-llama/Llama-3.2-1B`
+- `meta-llama/Llama-3.2-3B`
+- `meta-llama/Llama-3.2-1B-Instruct`
+- `meta-llama/Llama-3.2-3B-Instruct`
+- `meta-llama/Llama-Guard-3-1B`
+- `meta-llama/Llama-3.2-11B-Vision`
+- `meta-llama/Llama-3.2-11B-Vision-Instruct`
+- `meta-llama/Llama-3.2-90B-Vision`
+- `meta-llama/Llama-3.2-90B-Vision-Instruct`
+- `meta-llama/Llama-Guard-3-11B-Vision`
+- `meta-llama/Llama-3.3-70B-Instruct`
+- `lmsys/vicuna-13b-v1.3`
+- `01-ai/Yi-6B`
+- `01-ai/Yi-34B`
+- `llava-hf/llava-1.5-7b-hf`
+- `llava-hf/llava-1.5-13b-hf`
+- `openbmb/MiniCPM-2B-sft-bf16`
+- `openbmb/MiniCPM-2B-dpo-bf16`
+- `mistralai/Mistral-7B-v0.1`
+- `mistralai/Mistral-7B-Instruct-v0.1`
+- `mistralai/Mixtral-8x7B-v0.1`
+- `mistralai/Mixtral-8x7B-Instruct-v0.1`
+- `mistral-community/Mixtral-8x22B-v0.1`
+- `mosaicml/mpt-7b`
+- `mosaicml/mpt-30b`
+- `mosaicml/mpt-7b-instruct`
+- `mosaicml/mpt-30b-instruct`
+- `mosaicml/mpt-7b-chat`
+- `mosaicml/mpt-30b-chat`
+
+## Supported Models for Dynamo
+
+- `custom`: `Custom (If model not present in list)`  
+- `BAAI/Aquila-7B`: `Aquila-7B`  
+- `BAAI/AquilaChat-7B`: `Aquila2-7B-Chat`  
+- `Snowflake/snowflake-arctic-base`: `Arctic-Base`  
+- `Snowflake/snowflake-arctic-instruct`: `Arctic-Instruct`  
+- `baichuan-inc/Baichuan-7B`: `Baichuan-7B`  
+- `baichuan-inc/Baichuan2-13B-Chat`: `Baichuan2-13B-Chat`  
+- `bigscience/bloom`: `BLOOM`  
+- `bigscience/bloomz`: `BLOOMZ`  
+- `THUDM/chatglm2-6b`: `ChatGLM2-6B`  
+- `THUDM/chatglm3-6b`: `ChatGLM3-6B`  
+- `CohereForAI/c4ai-command-r-v01`: `Command-R`  
+- `databricks/dbrx-base`: `DBRX-Base`  
+- `databricks/dbrx-instruct`: `DBRX-Instruct`  
+- `Deci/DeciLM-7B`: `DeciLM-7B`  
+- `Deci/DeciLM-7B-instruct`: `DeciLM-7B-Instruct`  
+- `tiiuae/falcon-7b`: `Falcon-7B`  
+- `tiiuae/falcon-40b`: `Falcon-40B`  
+- `tiiuae/falcon-rw-7b`: `Falcon-RW-7B`  
+- `google/gemma-2b`: `Gemma-2B`  
+- `google/gemma-7b`: `Gemma-7B`  
+- `gpt2`: `GPT-2`  
+- `gpt2-xl`: `GPT-2-XL`  
+- `bigcode/starcoder`: `StarCoder`  
+- `bigcode/gpt_bigcode-santacoder`: `SantaCoder`  
+- `WizardLM/WizardCoder-15B-V1.0`: `WizardCoder-15B`  
+- `EleutherAI/gpt-j-6b`: `GPT-J-6B`  
+- `nomic-ai/gpt4all-j`: `GPT-J`  
+- `EleutherAI/gpt-neox-20b`: `GPT-NeoX-20B`  
+- `EleutherAI/pythia-12b`: `Pythia-12B`  
+- `OpenAssistant/oasst-sft-4-pythia-12b-epoch-3.5`: `OpenAssistant-12B`  
+- `databricks/dolly-v2-12b`: `Dolly-V2-12B`  
+- `stabilityai/stablelm-tuned-alpha-7b`: `StableLM-Alpha-7B`  
+- `internlm/internlm-7b`: `InternLM-7B`  
+- `internlm/internlm-chat-7b`: `InternLM-7B-Chat`  
+- `internlm/internlm2-7b`: `InternLM2-7B`  
+- `internlm/internlm2-chat-7b`: `InternLM2-7B-Chat`  
+- `core42/jais-13b`: `Jais-13B`  
+- `core42/jais-13b-chat`: `Jais-13B-Chat`  
+- `core42/jais-30b-v3`: `Jais-V3-30B`  
+- `core42/jais-30b-chat-v3`: `Jais-V3-30B-Chat`  
+- `openlm-research/open_llama_13b`: `LLaMA-13B`  
+- `meta-llama/Llama-2-13b-hf`: `Llama-2-13B`  
+- `meta-llama/Llama-2-70b-hf`: `Llama-2-70B`  
+- `meta-llama/Meta-Llama-3-8B-Instruct`: `Llama-3-8B-Instruct`  
+- `meta-llama/Meta-Llama-3-70B-Instruct`: `Llama-3-70B-Instruct`  
+- `meta-llama/Meta-Llama-3.1-8B-Instruct`: `Llama-3.1-8B-Instruct`  
+- `meta-llama/Meta-Llama-3.1-70B-Instruct`: `Llama-3.1-70B-Instruct`  
+- `meta-llama/Meta-Llama-3.1-405B-Instruct`: `Llama-3.1-405B-Instruct`  
+- `meta-llama/Meta-Llama-3.1-405B-Instruct-FP8`: `Llama-3.1-405B-Instruct-FP8`  
+- `meta-llama/Llama-3.2-1B`: `Llama-3.2-1B`  
+- `meta-llama/Llama-3.2-3B`: `Llama-3.2-3B`  
+- `meta-llama/Llama-3.2-1B-Instruct`: `Llama-3.2-1B-Instruct`  
+- `meta-llama/Llama-3.2-3B-Instruct`: `Llama-3.2-3B-Instruct`  
+- `meta-llama/Llama-Guard-3-1B`: `Llama-Guard-3-1B`  
+- `meta-llama/Llama-3.2-11B-Vision`: `Llama-3.2-11B-Vision`  
+- `meta-llama/Llama-3.2-11B-Vision-Instruct`: `Llama-3.2-11B-Vision-Instruct`  
+- `meta-llama/Llama-3.2-90B-Vision`: `Llama-3.2-90B-Vision`  
+- `meta-llama/Llama-3.2-90B-Vision-Instruct`: `Llama-3.2-90B-Vision-Instruct`  
+- `meta-llama/Llama-Guard-3-11B-Vision`: `Llama-Guard-3-11B-Vision`  
+- `meta-llama/Llama-3.3-70B-Instruct`: `Llama-3.3-70B-Instruct`  
+- `lmsys/vicuna-13b-v1.3`: `Vicuna-V1-13B`  
+- `01-ai/Yi-6B`: `Yi-6B`  
+- `01-ai/Yi-34B`: `Yi-34B`  
+- `llava-hf/llava-1.5-7b-hf`: `LLaVA-1.5-7B`  
+- `llava-hf/llava-1.5-13b-hf`: `LLaVA-1.5-13B`  
+
+
+
+
+## Versions
+
+### Versions for TensorrtServerOptions  
+  - 'v24.02'
+  - 'v24.01'
+  - 'v23.12'
+  - 'v23.11'
+  - 'v23.10'
+  - 'v0.10.0'
+  - 'v0.9.0'
+  - 'v0.7.2'
+  - 'custom'
+
+### Versions for PytorchServerOptions  
+  - 'v0.9.0'
+  - 'v0.8.2'
+  - 'v0.8.1'
+  - 'custom'
+
+### Versions for TritonServerOptions  
+  - 'v24.02'
+  - 'v24.01'
+  - 'v23.12'
+  - 'v23.11'
+  - 'v23.10'
+  - 'custom'
+
+### Versions for NemoServerOptions  
+  - 'v0.9.0'
+  - 'custom'

@@ -56,3 +56,11 @@ TIR Model Repositories are designed to store model weights and configuration fil
 - `created_at` (String) The timestamp when the model repository was created. This is computed automatically.
 - `id` (String) The ID of this resource.
 - `status` (String) The current status of the model repository. This is computed automatically.
+
+
+## Supported Model Type
+
+ - `pytorch`
+ - `triton`
+ - `tensorrt`
+ - `custom`
