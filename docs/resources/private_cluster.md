@@ -17,6 +17,7 @@ Private Cluster enables the creation of a dedicated environment with a predefine
 
 
 resource "tir_private_cluster" "name" {
+  name = "name"
   nodes_count = 1
   sku_name = "A100"
   sku_type = "hourly"

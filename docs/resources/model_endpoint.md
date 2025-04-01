@@ -30,25 +30,18 @@ You can launch an inference service using your own Docker image, either public o
   committed_days           = 0
   model_path               = ""
   framework                = "PYTORCH"
-  model_id                 = tir_modelRepository.name.id
+  #model_id                 = tir_model_repository.<name as in state file>.id   // You have to chose either model_id or model_load_integration_id
    model_load_integration_id = tir_integration.name.id
   cluster_type             = "tir-cluster"
   storage_type             = "disk"
   disk_path                = "/mnt/models"
-  sfs_path                 = "/shared/.cache"
-  # sfs_id                   = "1"
   image_pull_policy        = "Always"
   is_auto_scale_enabled    = false
   replica                  = 1
   committed_replicas      = 0
   
   auto_scale_policy {
-    # min_replicas = 1
-    # max_replicas = 5
-    # rules {
-        # Define rules as you needed.
-     }
-    # stability_period = 300
+    
     rules {
 
     }
@@ -57,8 +50,8 @@ You can launch an inference service using your own Docker image, either public o
   detailed_info {
     # commands          = "[\"jatin\",\"rahul\"]"
     # args              = ""
-    # hugging_face_id   = "BAAI/Aquila-7B"
-    server_version = "v0.9.0"
+    # hugging_face_id   = "BAAI/Aquila-7B" #this is the supported model for VLLM and SGLANG
+    server_version = "v0.9.0" # this is for TRITON, PYTORCH, NEMO, TENSORRT
     tokenizer         = ""
     world_size        = 1
     error_log         = true
@@ -105,18 +98,12 @@ You can launch an inference service using your own Docker image, either public o
       }
     }
   }
-
-  public_ip = "no"
   container_type = "public"
-  private_cloud_id = "private_cloud_123"
-  custom_sku = {
-    "sku_name" = 1
-  }
-    team_id = <team_id : string>
-    project_id = <project_id:string>
-    active_iam = <active_iam:string>
-    location = "Delhi"
-    currency = "INR"
+  team_id = <team_id : string>
+  project_id = <project_id:string>
+  active_iam = <active_iam:string>
+  location = "Delhi"
+  currency = "INR"
 }
 
 ```

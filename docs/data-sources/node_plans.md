@@ -9,6 +9,18 @@ description: |-
 # tir_notebook_plans (Data Source)
 
 
+## Example Usage
+
+``` hcl
+
+data "tir_node_plans" "name:string" {
+    active_iam = <string>
+    image_name = "Ubuntu"
+    image_version = "22.04"
+}
+
+
+```
 
 
 

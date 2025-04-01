@@ -103,7 +103,7 @@ func resourceCreatePrivateCluster(ctx context.Context, d *schema.ResourceData, m
 	response, err := apiClient.NewPrivateCluster(&payload, d.Get("project_id").(string), d.Get("team_id").(string), d.Get("active_iam").(string))
 	if err != nil {
 		// log.Println(err)
-		return diag.Errorf("Some error occured while creating the private Cluster. Please check the config you have provided!! %s", "fgjabsdg")
+		return diag.Errorf("Some error occured while creating the private Cluster. Please check the config you have provided!! %s", err)
 	}
 	data := response["data"].(map[string]interface{})
 	d.SetId(strconv.Itoa(int(math.Round(data["id"].(float64)))))

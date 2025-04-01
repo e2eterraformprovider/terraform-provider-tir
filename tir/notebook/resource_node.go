@@ -262,7 +262,16 @@ func resourceUpdateNode(ctx context.Context, d *schema.ResourceData, m interface
 	activeIAM := d.Get("active_iam").(string)
 	flag := d.Get("stop_node").(bool)
 
-	if d.HasChange("stop_node") {
+
+	if d.HasChange("node_name") {
+		_ , new := d.GetChange("node_name")
+		newName := new.(string)
+		_ , err := apiClient.UpdateNodeName(nodeID, projectID, teamID, activeIAM, newName)
+		if err != nil {
+			return diag.Errorf("some problem occured %e",err)
+		}
+
+	}else if d.HasChange("stop_node") {
 		if d.Get("sku_type") == "committed" {
 			d.Set("stop_node", false)
 			return diag.Errorf("You cant stop a committed node")
@@ -272,7 +281,7 @@ func resourceUpdateNode(ctx context.Context, d *schema.ResourceData, m interface
 			d.Set("stop_node", false)
 			return diag.Errorf("Not able to stop/start node")
 		}
-	} else if d.HasChange("sku_type") || d.HasChange("sku_name") || d.HasChange("committed_days") || d.HasChange("committed_instance_policy") {
+	}else if d.HasChange("sku_type") || d.HasChange("sku_name") || d.HasChange("committed_days") || d.HasChange("committed_instance_policy") {
 		old_sku_type, _ := d.GetChange("sku_type")
 		if old_sku_type == "committed" {
 			return diag.Errorf("you cannot change plan in committed plan")
@@ -302,10 +311,11 @@ func resourceUpdateNode(ctx context.Context, d *schema.ResourceData, m interface
 			IsJupyterLabEnabled: d.Get("is_jupyterlab_enabled").(bool),
 			ImageType:           d.Get("image_type").(string),
 		}
-		_, err := apiClient.UpdateImage(&node, projectID, teamID, activeIAM, nodeID)
+		response , err := apiClient.UpdateImage(&node, projectID, teamID, activeIAM, nodeID)
 		if err != nil {
 			return diag.Errorf("Image Update failed")
 		}
+		log.Println("response at image version",response)
 	}
 	return diags
 }

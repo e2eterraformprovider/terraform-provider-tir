@@ -40,7 +40,7 @@ TIR Model Repositories are designed to store model weights and configuration fil
 - `model_type` (String) The type of model stored in the repository. This defines the category or framework of the model (e.g., TensorFlow, PyTorch).
 - `name` (String) The name of the model repository. This is a required field and must be unique.
 - `project_id` (String) The ID of the project where the model repository is deployed.
-- `storage_type` (String) The type of storage for the model repository. Supported values are 'new_bucket' for managed storage, 'existing_bucket' for E2E S3, and 'disk' for PVC (Persistent Volume Claim).
+- `storage_type` (String) The type of storage for the model repository. Supported values are 'new' for managed storage, 'existing' for E2E S3, and 'external' for PVC (Persistent Volume Claim).
 - `team_id` (String) The ID of the team that owns the model repository.
 
 ### Optional

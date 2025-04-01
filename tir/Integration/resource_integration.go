@@ -60,7 +60,7 @@ func resourceCreateIntegration(ctx context.Context, d *schema.ResourceData, m in
 	response, err := apiClient.NewIntegration(&payload, d.Get("project_id").(string), d.Get("team_id").(string), d.Get("active_iam").(string))
 	if err != nil {
 		log.Println(err)
-		return diag.Errorf("Some error occured while creating the model repository. Please check the config you have provided!!")
+		return diag.Errorf("Some error occured while creating the model repository. Please check the config you have provided!! %e",err)
 	}
 	data := response["data"].(map[string]interface{})
 	d.SetId(strconv.Itoa(int(math.Round(data["id"].(float64)))))

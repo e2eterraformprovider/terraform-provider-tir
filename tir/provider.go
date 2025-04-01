@@ -43,8 +43,9 @@ func Provider() *schema.Provider {
 			"tir_private_cluster":  privateCluster.ResourcePrivateCluster(),
 		},
 		DataSourcesMap: map[string]*schema.Resource{
-			"tir_notebook_images":       notebook.DataSourceImages(),
-			"tir_notebook_plans": notebook.DataSourceSKUPlans(),
+			"tir_node_images":       notebook.DataSourceImages(),
+			"tir_node_plans": notebook.DataSourceSKUPlans(),
+			"tir_private_cluster_plans" : privateCluster.DataSourceSKUPlansPrivateCluster(),
 		},
 		ConfigureFunc: providerConfigure, // setup the API Client
 	}

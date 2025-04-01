@@ -41,10 +41,10 @@ resource "tir_eos" <name:string> {
 
 ### Optional
 
-- `bucket_name` (String) The name of the bucket associated with the EOS resource. This is computed automatically.
+- `bucket_name` (String) The name of the bucket associated with the EOS resource. This is required in case of existing_bucket storage type.
 - `disk_size` (Number) The size of the disk (in GB) allocated for the EOS resource. This is applicable only for PVC storage type.
 - `encryption_enable` (Boolean) Indicates whether encryption is enabled for the EOS resource. Default is false.
-- `encryption_type` (String) The type of encryption used for the EOS resource. This is required if encryption is enabled.
+- `encryption_type` (String) The type of encryption used for the EOS resource. This is required if encryption is enabled. Values are "user_managed" or "e2e_managed"
 - `pvc_type` (String) The type of PVC (Persistent Volume Claim) used for the EOS resource. This is applicable only for PVC storage type.
 
 ### Read-Only

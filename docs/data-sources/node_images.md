@@ -9,6 +9,14 @@ description: |-
 # tir_notebook (Data Source)
 
 
+## Example Usage 
+``` hcl
+
+data "tir_node_images" "image" {
+    active_iam = <active_iam : string>
+}
+
+```
 
 
 
