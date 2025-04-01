@@ -46,6 +46,7 @@ func Provider() *schema.Provider {
 			"tir_node_images":       notebook.DataSourceImages(),
 			"tir_node_plans": notebook.DataSourceSKUPlans(),
 			"tir_private_cluster_plans" : privateCluster.DataSourceSKUPlansPrivateCluster(),
+			"tir_model_endpoint_plans" : modelEndpoint.DataSourceSKUPlansModelEndpoint(),
 		},
 		ConfigureFunc: providerConfigure, // setup the API Client
 	}

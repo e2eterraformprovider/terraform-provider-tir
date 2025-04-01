@@ -8,6 +8,8 @@ import (
 	"log"
 	"net/http"
 	"strconv"
+
+	"github.com/e2eterraformprovider/terraform-provider-tir/constants"
 	"github.com/e2eterraformprovider/terraform-provider-tir/models"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 )
@@ -88,7 +90,6 @@ func (c *Client) DeleteEndpoint(endpointID string, projectID string, teamID stri
 	if err != nil {
 		return nil, err
 	}
-	log.Println("jatin111111DELETE")
 	params := req.URL.Query()
 	params.Add("apikey", c.Api_key)
 	params.Add("active_iam", activeIAM)
@@ -310,4 +311,54 @@ func SetSchemaFromResponse(d *schema.ResourceData, response map[string]interface
 	}
 
 	return nil
+}
+
+
+
+
+
+func (c *Client) GetPlansModelEndpoint( activeIAM string, framework string) (map[string]interface{}, error) {
+	
+	frameworkVal, _ := constants.GetFrameworkName(framework)
+	urlNode := c.Api_endpoint + "/gpu_service/" + "sku/"
+	req, err := http.NewRequest("GET", urlNode, nil)
+	if err != nil {
+		return nil, err
+	}
+	log.Printf("[INFO] CLIENT | NODE READ")
+	params := req.URL.Query()
+	params.Add("apikey", c.Api_key)
+	params.Add("active_iam", activeIAM)
+	params.Add("service", "inference_service")
+	params.Add("framework",frameworkVal)
+	req.URL.RawQuery = params.Encode()
+	req.Header.Add("Authorization", "Bearer "+c.Auth_token)
+	req.Header.Add("Content-Type", "application/json")
+	req.Header.Set("User-Agent", "terraform/e2e")
+	log.Println(req)
+	response, err := c.HttpClient.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	log.Println(response)
+	if response.StatusCode != http.StatusOK {
+		respBody := new(bytes.Buffer)
+		_, err := respBody.ReadFrom(response.Body)
+		if err != nil {
+			return nil, fmt.Errorf("got a non 200 status code: %v", response.StatusCode)
+		}
+		return nil, fmt.Errorf("got a non 200 status code: %v - %s", response.StatusCode, respBody.String())
+	}
+	defer response.Body.Close()
+	resBody, _ := io.ReadAll(response.Body)
+	stringresponse := string(resBody)
+	log.Printf("%s", stringresponse)
+	resBytes := []byte(stringresponse)
+	var jsonRes map[string]interface{}
+	err = json.Unmarshal(resBytes, &jsonRes)
+	if err != nil {
+		log.Printf("[ERROR] CLIENT GET NDE | error when unmarshalling")
+		return nil, err
+	}
+	return jsonRes, nil
 }

@@ -67,7 +67,7 @@ func DataSourceSKUPlansPrivateCluster() *schema.Resource {
 
 
 func dataSourcePlansPrivateClusterRead(ctx context.Context, d *schema.ResourceData, m interface{}) diag.Diagnostics {
-	//https://api-loki.e2enetworks.net/myaccount/api/v1/gpu/gpu_service/sku/?service=notebook&image_version_id=64&apikey=646e17f7-cb66-45e9-9bef-246c6f85f418&active_iam=99
+	
 	apiClient := m.(*client.Client)
 	var diags diag.Diagnostics
 	active_iam := d.Get("active_iam").(string)
