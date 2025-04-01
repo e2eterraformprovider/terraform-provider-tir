@@ -286,11 +286,10 @@ func (c *Client) GetImages(activeIAM string) (map[string]interface{}, error) {
 	return jsonRes, nil
 }
 
-func (c *Client) GetPlans(item *models.ImageDetail, activeIAM string) (map[string]interface{}, error) {
-	jsonPayload, _ := json.Marshal(item)
-	buf := bytes.NewBuffer(jsonPayload)
+func (c *Client) GetPlans(activeIAM string, image_name string, image_version string) (map[string]interface{}, error) {
+	
 	urlNode := c.Api_endpoint + "/gpu_service/" + "sku/"
-	req, err := http.NewRequest("GET", urlNode, buf)
+	req, err := http.NewRequest("GET", urlNode, nil)
 	if err != nil {
 		return nil, err
 	}
@@ -299,6 +298,8 @@ func (c *Client) GetPlans(item *models.ImageDetail, activeIAM string) (map[strin
 	params.Add("apikey", c.Api_key)
 	params.Add("active_iam", activeIAM)
 	params.Add("service", "notebook")
+	params.Add("image_name",image_name)
+	params.Add("image_version",image_version)
 	req.URL.RawQuery = params.Encode()
 	req.Header.Add("Authorization", "Bearer "+c.Auth_token)
 	req.Header.Add("Content-Type", "application/json")

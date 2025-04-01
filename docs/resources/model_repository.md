@@ -40,14 +40,14 @@ TIR Model Repositories are designed to store model weights and configuration fil
 - `model_type` (String) The type of model stored in the repository. This defines the category or framework of the model (e.g., TensorFlow, PyTorch).
 - `name` (String) The name of the model repository. This is a required field and must be unique.
 - `project_id` (String) The ID of the project where the model repository is deployed.
-- `storage_type` (String) The type of storage for the model repository. Supported values are 'new' for managed storage, 'existing' for E2E S3, and 'external' for PVC (Persistent Volume Claim).
+- `storage_type` (String) The type of storage for the model repository. Supported values are 'new' for managed storage, 'existing' for E2E S3, and 'external' for PVC (Persistent Volume Claim). If you are choosing storage_type other than "new" please check optional fields there are some other required fields too. Otherwise resources will not created.
 - `team_id` (String) The ID of the team that owns the model repository.
 
 ### Optional
 
-- `access_key` (String) The access key for the model repository. This is optional and will be auto-generated if not provided.
-- `bucket_name` (String) The name of the bucket associated with the model repository. This is optional and will be auto-generated if not provided.
-- `secret_key` (String) The secret key for the model repository. This is optional and will be auto-generated if not provided.
+- `access_key` (String) The access key for the model repository.  This is required incase of storage_type as  external.
+- `bucket_name` (String) The name of the bucket associated with the model repository. This is required incase of storage_type as existing or external
+- `secret_key` (String) The secret key for the model repository.  This is required incase of storage_type as external
 
 ### Read-Only
 

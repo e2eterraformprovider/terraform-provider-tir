@@ -17,7 +17,7 @@ TIR Datasets provide a seamless solution for organizing, sharing, and accessing 
 
 resource "tir_eos" <name:string> {
     name = <name:string>
-    disk_size = 100
+    disk_size = 100 // this is to be given only in case of storage_type as "disk"
     storage_type = <storage_type:string>
     pvc_type = "custom_pvc" // this must be custom_pvc in case of disk otherwise you can leave it
     team_id = <team_id : string>
@@ -36,7 +36,7 @@ resource "tir_eos" <name:string> {
 - `active_iam` (String) The IAM (Identity and Access Management) role associated with the EOS resource.
 - `name` (String) The name of the EOS (Elastic Object Storage) resource. This is a required field and must be unique.
 - `project_id` (String) The ID of the project where the EOS resource is deployed.
-- `storage_type` (String) The type of storage for the EOS resource. Supported values are 'new_bucket' for managed storage, 'existing_bucket' for E2E S3, and 'disk' for PVC (Persistent Volume Claim).
+- `storage_type` (String) The type of storage for the EOS resource. Supported values are 'new_bucket' for managed storage, 'existing_bucket' for E2E S3, also bucket_name is required in this case of existing_bucket, and 'disk' for PVC (Persistent Volume Claim).
 - `team_id` (String) The ID of the team that owns the EOS resource.
 
 ### Optional

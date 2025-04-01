@@ -23,8 +23,8 @@ resource "tir_private_cluster" "name" {
   sku_type = "hourly"
   location = "Delhi"
   currency = "INR"
-  committed_days = 0 // optional field leave it if sku_type = hourly
-  committed_instance_policy = "auto_terminate" / "auto_renew" / "convert_to_hourly_billing" fill only incase of sku_type = committed
+ // committed_days = 0 // optional field leave it if sku_type = hourly
+  // committed_instance_policy =  "auto_terminate" or "auto_renew" or "convert_to_hourly_billing" fill only incase of sku_type = committed
     team_id = <team_id : string>
     project_id = <project_id:string>
     active_iam = <active_iam:string>

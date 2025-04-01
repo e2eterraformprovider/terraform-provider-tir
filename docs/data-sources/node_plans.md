@@ -29,15 +29,11 @@ data "tir_node_plans" "name:string" {
 
 ### Required
 
-- `active_iam` (String)
+- `active_iam` (String) This is the iams for your accounts you generated before using data sources.
 - `image_name` (String)
 - `image_version` (String)
 
 ### Optional
-
-- `category` (String)
-- `image_type` (String)
-- `is_jupyterlab_enabled` (Boolean)
 
 ### Read-Only
 

@@ -18,7 +18,6 @@ description: |-
 ```hcl
 resource "tir_integration" "hfst" {
   name = <name:string>
-  integration_type = "hugging_face"
   hugging_face_token = <token:string>
     team_id = <team_id : string>
     project_id = <project_id:string>
@@ -37,12 +36,11 @@ resource "tir_integration" "hfst" {
 
 ### Required
 
-- `active_iam` (String)
-- `hugging_face_token` (String)
-- `integration_type` (String)
-- `name` (String)
-- `project_id` (String)
-- `team_id` (String)
+- `active_iam` (String) The IAM (Identity and Access Management) role associated with the node.
+- `hugging_face_token` (String) This is the hugging face token from hugging face platform
+- `name` (String) The name of the hugging face integration token
+- `project_id` (String) The ID of the project where the resource is created
+- `team_id` (String) The ID of the team where the resource is created
 
 ### Read-Only
 

@@ -2,12 +2,15 @@ package e2e
 
 import (
 	"github.com/e2eterraformprovider/terraform-provider-tir/client"
-	"github.com/e2eterraformprovider/terraform-provider-tir/tir/dataset"
 	"github.com/e2eterraformprovider/terraform-provider-tir/tir/Integration"
+	"github.com/e2eterraformprovider/terraform-provider-tir/tir/dataset"
+	"github.com/e2eterraformprovider/terraform-provider-tir/tir/iams"
 	"github.com/e2eterraformprovider/terraform-provider-tir/tir/modelEndpoint"
 	"github.com/e2eterraformprovider/terraform-provider-tir/tir/modelRepo"
 	"github.com/e2eterraformprovider/terraform-provider-tir/tir/notebook"
 	"github.com/e2eterraformprovider/terraform-provider-tir/tir/privateCluster"
+	"github.com/e2eterraformprovider/terraform-provider-tir/tir/projects"
+	"github.com/e2eterraformprovider/terraform-provider-tir/tir/teams"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 )
 
@@ -47,6 +50,9 @@ func Provider() *schema.Provider {
 			"tir_node_plans": notebook.DataSourceSKUPlans(),
 			"tir_private_cluster_plans" : privateCluster.DataSourceSKUPlansPrivateCluster(),
 			"tir_model_endpoint_plans" : modelEndpoint.DataSourceSKUPlansModelEndpoint(),
+			"tir_iams" : iams.DataSourceIAMS(),
+			"tir_teams" : teams.DataSourceTeams(),
+			"tir_projects" : projects.DataSourceProjects(),
 		},
 		ConfigureFunc: providerConfigure, // setup the API Client
 	}

@@ -25,8 +25,7 @@ data "tir_private_cluster_plans" "pvc" {
 ### Required
 
 - `active_iam` (String)
-- `image_name` (String)
-- `image_version` (String)
+
 
 ### Optional
 

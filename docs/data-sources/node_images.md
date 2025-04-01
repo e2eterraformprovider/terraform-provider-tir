@@ -25,12 +25,9 @@ data "tir_node_images" "image" {
 
 ### Required
 
-- `active_iam` (Number)
+- `active_iam` (String)
 
 ### Optional
-
-- `category` (String)
-- `is_jupyterlab_enabled` (Boolean)
 
 ### Read-Only
 

@@ -26,8 +26,8 @@ data "tir_model_endpoint_plans" "model_endpoint_plans" {
 ### Required
 
 - `active_iam` (String)
-- `image_name` (String)
-- `image_version` (String)
+- `framework` (String)
+
 
 ### Optional
 
@@ -50,3 +50,44 @@ Read-Only:
 - `name` (String)
 - `sku_type` (String)
 - `unit_price` (Number)
+
+
+
+
+
+
+## Supported Frameworks
+
+  Use left side value in strings such as "TRITON"
+
+  - TRITON = 'triton'
+  - PYTORCH = 'pytorch' 
+  - LLAMA = 'llma'
+  - CODELAMA = 'codellama'
+  - STABLE_DIFFUSION = 'stable_diffusion'
+  - STABLE_DIFFUSION_XL = 'stable_diffusion_xl'
+  - MPT = 'mpt'
+  - CUSTOM = 'custom'
+  - MIXTRAL8X7B = 'mixtral-8x7b-instruct'
+  - MIXTRAL7B = 'mistral-7b-instruct'
+  - TENSOR_RT = 'tensorrt'
+  - FINETUNED = 'finetuned'
+  - GEMMA_2B = 'gemma-2b'
+  - GEMMA_2B_IT = 'gemma-2b-it'
+  - GEMMA_7B = 'gemma-7b'
+  - GEMMA_7B_IT = 'gemma-7b-it'
+  - LLAMA_3 = 'llama-3-8b-instruct'
+  - LLAMA_3_1 = 'llama-3_1-8b-instruct'
+  - LLAMA_3_2 = 'llama-3_2-3b-instruct'
+  - LLAMA_3_2_VISION = 'llama-3_2-11b-vision-instruct'
+  - VLLM = 'vllm'
+  - STARCODER = 'starcoder2-7b'
+  - PHI_3_MINI = 'Phi-3-mini-128k-instruct'
+  - NEMO = 'nemo-rag'
+  - STABLE_VIDEO_DIFFUSION = 'stable-video-diffusion-img2vid-xt'
+  - YOLO_V8 = 'yolov8'
+  - NEMOTRON = 'nemotron-3-8b-chat-4k-rlhf'
+  - NV_EMBED = 'nvidia-nv-embed-v1'
+  - BAAI_LARGE = 'bge-large-en-v1_5'
+  - BAAI_RERANKER = 'bge-reranker-large'
+  - PIXTRAL = 'pixtral-12b-2409'

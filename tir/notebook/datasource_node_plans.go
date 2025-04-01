@@ -5,7 +5,7 @@ import (
 	"log"
 	"reflect"
 	"github.com/e2eterraformprovider/terraform-provider-tir/client"
-	"github.com/e2eterraformprovider/terraform-provider-tir/models"
+	// "github.com/e2eterraformprovider/terraform-provider-tir/models"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 )
@@ -91,13 +91,13 @@ func dataSourcePlansRead(ctx context.Context, d *schema.ResourceData, m interfac
 	apiClient := m.(*client.Client)
 	var diags diag.Diagnostics
 	active_iam := d.Get("active_iam").(string)
-	node := models.ImageDetail{
-		ImageName:           d.Get("image_name").(string),
-		ImageVersion:        d.Get("image_version").(string),
-		IsJupyterLabEnabled: d.Get("is_jupyterlab_enabled").(bool),
-		ImageType:           d.Get("image_type").(string),
-	}
-	response, err := apiClient.GetPlans(&node, active_iam)
+	// node := models.ImageDetail{
+	// 	ImageName:           d.Get("image_name").(string),
+	// 	ImageVersion:        d.Get("image_version").(string),
+	// 	IsJupyterLabEnabled: d.Get("is_jupyterlab_enabled").(bool),
+	// 	ImageType:           d.Get("image_type").(string),
+	// }
+	response, err := apiClient.GetPlans(active_iam,d.Get("image_name").(string), d.Get("image_version").(string))
 	if err != nil {
 		return diag.Errorf("Not able to find plans")
 	}
