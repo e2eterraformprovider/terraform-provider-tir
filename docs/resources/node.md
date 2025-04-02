@@ -53,7 +53,6 @@ resource "tir_node" "name:string"{
 ### Optional
 
 - `add_ons` (List of String) A list of add-ons associated with the node.
-- `category` (String) The category of the node. Default is 'notebook'.
 - `cluster_type` (String) The type of cluster the node belongs to. Default is 'tir-cluster'.
 - `committed_days` (Number) The number of days the node is committed for. This is used for billing and resource allocation.
 - `committed_instance_policy` (String) The policy for committed instances. This defines how committed instances are managed and billed.

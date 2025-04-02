@@ -33,6 +33,7 @@ func (c *Client) NewEndoint(item *models.ModelEndpoint, projectID string, teamID
 	req.Header.Add("Authorization", "Bearer "+c.Auth_token)
 	req.Header.Add("Content-Type", "application/json")
 	req.Header.Set("User-Agent", "terraform/e2e")
+	log.Println("sahil",req)
 	response, err := c.HttpClient.Do(req)
 	if err != nil {
 		log.Println("Error while creating")

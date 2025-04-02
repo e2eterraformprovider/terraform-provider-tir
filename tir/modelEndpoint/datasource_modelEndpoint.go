@@ -17,7 +17,7 @@ func DataSourceSKUPlansModelEndpoint() *schema.Resource {
 			"plans": {
 				Type: schema.TypeList,
 				Elem: &schema.Resource{Schema: map[string]*schema.Schema{
-					"name": { //
+					"sku_name": { //
 						Type:     schema.TypeString,
 						Computed: true,
 					},
@@ -90,7 +90,7 @@ func dataSourcePlansModelEndpointRead(ctx context.Context, d *schema.ResourceDat
 				for _, planItem := range plansList {
 					planMap := planItem.(map[string]interface{})
 					plans = append(plans, map[string]interface{}{
-						"name":           cpuMap["name"],
+						"sku_name":           cpuMap["name"],
 						"cpu":            cpuMap["cpu"],
 						"gpu":            cpuMap["gpu"],
 						"memory":         cpuMap["memory"],
@@ -111,7 +111,7 @@ func dataSourcePlansModelEndpointRead(ctx context.Context, d *schema.ResourceDat
 				for _, planItem := range plansList {
 					planMap := planItem.(map[string]interface{})
 					plans = append(plans, map[string]interface{}{
-						"name":           gpuMap["name"],
+						"sku_name":           gpuMap["name"],
 						"cpu":            gpuMap["cpu"],
 						"gpu":            gpuMap["gpu"],
 						"memory":         gpuMap["memory"],

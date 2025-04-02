@@ -32,11 +32,6 @@ func DataSourceImages() *schema.Resource {
 				Type:     schema.TypeString,
 				Required: true,
 			},
-			"category": {
-				Type:     schema.TypeString,
-				Optional: true,
-				Default:  "notebook",
-			},
 			"is_jupyterlab_enabled": {
 				Type:     schema.TypeBool,
 				Optional: true,

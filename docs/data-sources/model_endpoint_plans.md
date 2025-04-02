@@ -61,8 +61,8 @@ Read-Only:
   Use left side value in strings such as "TRITON"
 
   - TRITON = 'triton'
-  - PYTORCH = 'pytorch' 
   - LLAMA = 'llma'
+  - PYTORCH = 'pytorch' 
   - CODELAMA = 'codellama'
   - STABLE_DIFFUSION = 'stable_diffusion'
   - STABLE_DIFFUSION_XL = 'stable_diffusion_xl'
@@ -71,7 +71,6 @@ Read-Only:
   - MIXTRAL8X7B = 'mixtral-8x7b-instruct'
   - MIXTRAL7B = 'mistral-7b-instruct'
   - TENSOR_RT = 'tensorrt'
-  - FINETUNED = 'finetuned'
   - GEMMA_2B = 'gemma-2b'
   - GEMMA_2B_IT = 'gemma-2b-it'
   - GEMMA_7B = 'gemma-7b'
@@ -91,3 +90,5 @@ Read-Only:
   - BAAI_LARGE = 'bge-large-en-v1_5'
   - BAAI_RERANKER = 'bge-reranker-large'
   - PIXTRAL = 'pixtral-12b-2409'
+  - SGLANG = 'sglang'
+  - DYNAMO = 'dynamo'

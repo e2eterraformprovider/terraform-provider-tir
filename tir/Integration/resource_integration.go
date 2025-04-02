@@ -22,7 +22,8 @@ func ResourceModelRepo() *schema.Resource {
 			},
 			"integration_type": {
 				Type:     schema.TypeString,
-				Required: true,
+				Optional: true,
+				Default: "hugging_face",
 			},
 			"hugging_face_token": {
 				Type:     schema.TypeString,

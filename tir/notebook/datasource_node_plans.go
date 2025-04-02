@@ -63,11 +63,6 @@ func DataSourceSKUPlans() *schema.Resource {
 				Type:     schema.TypeString,
 				Required: true,
 			},
-			"category": {
-				Type:     schema.TypeString,
-				Optional: true,
-				Default:  "notebook",
-			},
 			"is_jupyterlab_enabled": {
 				Type:     schema.TypeBool,
 				Optional: true,
@@ -91,15 +86,9 @@ func dataSourcePlansRead(ctx context.Context, d *schema.ResourceData, m interfac
 	apiClient := m.(*client.Client)
 	var diags diag.Diagnostics
 	active_iam := d.Get("active_iam").(string)
-	// node := models.ImageDetail{
-	// 	ImageName:           d.Get("image_name").(string),
-	// 	ImageVersion:        d.Get("image_version").(string),
-	// 	IsJupyterLabEnabled: d.Get("is_jupyterlab_enabled").(bool),
-	// 	ImageType:           d.Get("image_type").(string),
-	// }
 	response, err := apiClient.GetPlans(active_iam,d.Get("image_name").(string), d.Get("image_version").(string))
 	if err != nil {
-		return diag.Errorf("Not able to find plans")
+		return diag.Errorf("Not able to find plans %s",err)
 	}
 	var plans []interface{}
 	// Process the CPU data

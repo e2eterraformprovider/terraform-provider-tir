@@ -50,15 +50,15 @@ You can launch an inference service using your own Docker image, either public o
   detailed_info {
     # commands          = "[\"jatin\",\"rahul\"]"
     # args              = ""
-    # hugging_face_id   = "BAAI/Aquila-7B" #this is the supported model for VLLM and SGLANG
-    server_version = "v0.9.0" # this is for TRITON, PYTORCH, NEMO, TENSORRT
+    # hugging_face_id   = "BAAI/Aquila-7B" #this is the supported model for VLLM, SGLANG and DYNAMO
+    server_version = "v0.9.0" // this is for TRITON, PYTORCH, NEMO, TENSORRT
     tokenizer         = ""
     world_size        = 1
     error_log         = true
     info_log          = true
     warning_log       = true
     log_verbose_level = 1
-    model_serve_type  = ""
+    model_serve_type  = "" // this is required for vllm its value is "full-model" / "peft-model"
     engine_args =  {
       # Define engine_args as you needed.
     }
@@ -268,7 +268,6 @@ Optional:
 
   - TRITON = 'triton'
   - PYTORCH = 'pytorch' 
-  - LLAMA = 'llma'
   - CODELAMA = 'codellama'
   - STABLE_DIFFUSION = 'stable_diffusion'
   - STABLE_DIFFUSION_XL = 'stable_diffusion_xl'
@@ -277,7 +276,6 @@ Optional:
   - MIXTRAL8X7B = 'mixtral-8x7b-instruct'
   - MIXTRAL7B = 'mistral-7b-instruct'
   - TENSOR_RT = 'tensorrt'
-  - FINETUNED = 'finetuned'
   - GEMMA_2B = 'gemma-2b'
   - GEMMA_2B_IT = 'gemma-2b-it'
   - GEMMA_7B = 'gemma-7b'
@@ -297,6 +295,8 @@ Optional:
   - BAAI_LARGE = 'bge-large-en-v1_5'
   - BAAI_RERANKER = 'bge-reranker-large'
   - PIXTRAL = 'pixtral-12b-2409'
+  - SGLANG = 'sglang'
+  - DYNAMO = 'dynamo'
 
 
 ## Supported Models for SGLANG

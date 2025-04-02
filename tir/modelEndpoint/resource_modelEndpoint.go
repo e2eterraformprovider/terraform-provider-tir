@@ -614,6 +614,7 @@ func resourceCreateModelEndpoint(ctx context.Context, d *schema.ResourceData, m 
 	}
 	di := d.Get("detailed_info").([]interface{})
 	detailed_info := di[0].(map[string]interface{})
+	// log.Println(detailed_info["server_version"].(string), d.Get("model_id").(string), d.Get("framework").(string))
 	err, containerName := constants.GetContainerName(detailed_info["server_version"].(string), d.Get("model_id").(string), d.Get("framework").(string))
 	log.Println("Container name:", containerName)
 
@@ -881,6 +882,9 @@ func createPayloadForInference(d *schema.ResourceData) (diag.Diagnostics, models
 	log.Println("after")
 	detailed_info["commands"] = base64.StdEncoding.EncodeToString([]byte(commands))
 	detailed_info["args"] = base64.StdEncoding.EncodeToString([]byte(args))
+	if d.Get("framework").(string) != "VLLM" || d.Get("framework").(string) != "DYNAMO" || d.Get("framework").(string) != "SGLANG" {
+		detailed_info["hugging_face_id"] = constants.GetDefaultHuggingFaceID(d.Get("framework").(string))
+	}
 	log.Println("engine_args", engine_args)
 	log.Println("detailed_info", detailed_info)
 	endpointNode := models.ModelEndpoint{
