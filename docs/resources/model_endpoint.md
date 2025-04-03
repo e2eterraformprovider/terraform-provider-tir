@@ -199,7 +199,7 @@ Optional:
 - `args` (String) Arguments to pass to the commands when the resource is deployed.
 - `commands` (String) Commands to execute when the resource is deployed.
 - `engine_args` (Map of String) Additional engine-specific arguments for the model.
-- `error_log` (Boolean) Enable or disable error logging.
+- `error_log` (Boolean) Enable or disable error logging.(see [below for nested schema](#nestedblock--detailed_info--engine_args))
 - `hugging_face_id` (String) The Hugging Face model ID associated with the resource.
 - `info_log` (Boolean) Enable or disable info logging.
 - `log_verbose_level` (Number) The verbosity level for logging.
@@ -208,6 +208,74 @@ Optional:
 - `tokenizer` (String) The tokenizer to use for the model.
 - `warning_log` (Boolean) Enable or disable warning logging.
 - `world_size` (Number) The world size for distributed training or inference.
+
+<a id="nestedblock--detailed_info--engine_args"></a>
+### Nested Schema for `detailed_info.engine_args`
+
+Optional:
+
+- `block_size`
+- `chat_template`
+- `data_type`
+- `disable_custom_all_reduce`
+- `disable_log_requests`
+- `disable_log_stats`
+- `disable_sliding_window`
+- `distributed_executor_backend`
+- `enable_auto_tool_choice`
+- `enable_chunked_prefill`
+- `enable_lora`
+- `enable_lora_bias`
+- `enable_prefix_caching`
+- `enforce_eager`
+- `fully_sharded_loras`
+- `gpu_memory_utilization`
+- `guided_decoding_backend`
+- `kv_cache_data_type`
+- `load_format`
+- `long_lora_scaling_factors`
+- `lora_data_type`
+- `lora_extra_vocab_size`
+- `max_cpu_loras`
+- `max_log_len`
+- `max_logprobs`
+- `max_lora_rank`
+- `max_loras`
+- `max_model_length`
+- `max_num_batched_tokens`
+- `max_num_seqs`
+- `max_parallel_loading_workers`
+- `max_seq_len_to_capture`
+- `model_loader_extra_config`
+- `ngram_prompt_lookup_max`
+- `ngram_prompt_lookup_min`
+- `num_gpu_blocks_override`
+- `num_lookahead_slots`
+- `num_speculative_tokens`
+- `preemption_mode`
+- `quantization`
+- `rope_scaling`
+- `rope_theta`
+- `scheduler_delay_factor`
+- `seed`
+- `skip_tokenizer_init`
+- `spec_decoding_acceptance_method`
+- `speculative_disable_by_batch_size`
+- `speculative_draft_tensor_parallel_size`
+- `speculative_max_model_len`
+- `speculative_model`
+- `swap_space`
+- `tokenizer`
+- `tokenizer_mode`
+- `tokenizer_pool_extra_config`
+- `tokenizer_pool_size`
+- `tokenizer_pool_type`
+- `tokenizer_revision`
+- `tool_call_parser`
+- `typical_acceptance_sampler_posterior_alpha`
+- `typical_acceptance_sampler_posterior_threshold`
+
+
 
 
 <a id="nestedblock--liveness_probe"></a>

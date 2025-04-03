@@ -882,7 +882,7 @@ func createPayloadForInference(d *schema.ResourceData) (diag.Diagnostics, models
 	log.Println("after")
 	detailed_info["commands"] = base64.StdEncoding.EncodeToString([]byte(commands))
 	detailed_info["args"] = base64.StdEncoding.EncodeToString([]byte(args))
-	if d.Get("framework").(string) != "VLLM" || d.Get("framework").(string) != "DYNAMO" || d.Get("framework").(string) != "SGLANG" {
+	if d.Get("framework").(string) != "VLLM" && d.Get("framework").(string) != "DYNAMO" && d.Get("framework").(string) != "SGLANG" {
 		detailed_info["hugging_face_id"] = constants.GetDefaultHuggingFaceID(d.Get("framework").(string))
 	}
 	log.Println("engine_args", engine_args)
