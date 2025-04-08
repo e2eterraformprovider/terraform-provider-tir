@@ -28,6 +28,7 @@ data "tir_teams" "teams" {
 - active_iam (String) This will be string value which you can find in state file after runnign data sources for iams.
 
 
+
 ### Optional
 
 

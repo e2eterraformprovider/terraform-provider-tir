@@ -8,7 +8,7 @@ description: |-
 
 # tir_model_endpoint (Resource)
 
-IR provides two methods for deploying containers that serve model API endpoints for AI inference services:
+TIR provides two methods for deploying containers that serve model API endpoints for AI inference services:
 
 Deploy Using Pre-built Containers (Provided by TIR)
 

@@ -32,9 +32,13 @@ func (c *Client) NewPrivateCluster(item *models.PrivateCluster, projectID string
 		log.Println("Error while creating")
 		return nil, err
 	}
-	err = CheckResponseStatus(response)
-	if err != nil {
-		return nil, err
+	if response.StatusCode != http.StatusOK {
+		respBody := new(bytes.Buffer)
+		_, err := respBody.ReadFrom(response.Body)
+		if err != nil {
+			return nil, fmt.Errorf("got a non 200 status code: %v", response.StatusCode)
+		}
+		return nil, fmt.Errorf("got a non 200 status code: %v - %s", response.StatusCode, respBody.String())
 	}
 	defer response.Body.Close()
 	resBody, _ := io.ReadAll(response.Body)
